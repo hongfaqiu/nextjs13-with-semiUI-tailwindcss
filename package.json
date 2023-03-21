@@ -9,17 +9,11 @@
     "format": "prettier --write \"**/*.{js,ts,tsx,mdx}\" --cache",
     "check": "prettier --check \"**/*.{js,ts,tsx,mdx}\" --cache"
   },
-  "git": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*": "prettier --write \"**/*.{js,ts,tsx,mdx}\" --cache"
-  },
   "dependencies": {
     "@douyinfe/semi-ui": "^2.31.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.118.0",
-    "next": "13.2.2",
+    "next": "13.2.4",
     "next-intl": "2.11.0-beta.16",
     "next-themes": "^0.2.1",
     "react": "18.2.0",

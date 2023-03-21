@@ -1,6 +1,8 @@
 'use client';
 
-import { Link, useTranslations } from 'next-intl';
+import Link from 'next/link';
+
+import { useTranslations } from 'next-intl';
 
 import useScroll from '@/hooks/use-scroll';
 
@@ -10,12 +12,13 @@ import ThemeToggle from './ThemeToggle';
 
 export default function SiteHeader() {
 	const t = useTranslations('header');
-	const scroll = document === undefined ? undefined : useScroll(document);
+
+	const scroll = typeof window === 'object' ? useScroll(document) : undefined;
 
 	const classNames1 =
-		'bg-white/60 sticky top-0 z-40 w-full flex-none backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent lg:z-50 lg:border-b lg:border-slate-900/10';
+		'bg-white/60 sticky top-0 z-[1031] w-full flex-none backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent lg:border-b lg:border-slate-900/10';
 	const classNames2 =
-		'bg-white/95 sticky top-0 z-40 w-full flex-none backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-slate-900/75 lg:z-50 lg:border-b lg:border-slate-900/10';
+		'bg-white/95 sticky top-0 z-[1031] w-full flex-none backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-slate-900/75 lg:border-b lg:border-slate-900/10';
 
 	return (
 		<header className={!!scroll && scroll.top > 60 ? classNames2 : classNames1}>
@@ -29,6 +32,16 @@ export default function SiteHeader() {
 				</Link>
 				<div className="flex flex-1 items-center justify-end space-x-4">
 					<nav className="flex items-center space-x-1">
+						<Link
+							href={
+								'https://github.com/hongfaqiu/nextjs13-with-antd-tailwindcss'
+							}
+							target="_blank"
+							rel="noreferrer"
+							className="btn"
+						>
+							<Icons.Github className="h-5 w-5" />
+						</Link>
 						<LocaleSwitcher />
 						<ThemeToggle />
 					</nav>

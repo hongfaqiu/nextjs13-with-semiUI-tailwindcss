@@ -7,24 +7,24 @@ import { Button, Col, Form, Row } from '@douyinfe/semi-ui';
 import Icons from './Icons';
 
 const {
-  Section,
-  Input,
-  InputNumber,
-  AutoComplete,
-  Select,
-  TreeSelect,
-  Cascader,
-  DatePicker,
-  TimePicker,
-  TextArea,
-  CheckboxGroup,
-  Checkbox,
-  RadioGroup,
-  Radio,
-  Slider,
-  Rating,
-  Switch,
-  TagInput,
+	Section,
+	Input,
+	InputNumber,
+	AutoComplete,
+	Select,
+	TreeSelect,
+	Cascader,
+	DatePicker,
+	TimePicker,
+	TextArea,
+	CheckboxGroup,
+	Checkbox,
+	RadioGroup,
+	Radio,
+	Slider,
+	Rating,
+	Switch,
+	TagInput,
 } = Form;
 
 export default function FormComponents() {
@@ -42,52 +42,28 @@ export default function FormComponents() {
 				preview: true,
 				url: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/root-web-sites/vigo.png',
 			},
-			{
-				uid: '2',
-				name: 'resso.jpeg',
-				status: 'validateFail',
-				size: '222KB',
-				percent: 50,
-				preview: true,
-				fileInstance: new File([new ArrayBuffer(2048)], 'resso.jpeg', {
-					type: 'image/jpeg',
-				}),
-				url: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/root-web-sites/Resso.png',
-			},
-			{
-				uid: '3',
-				name: 'dy.jpeg',
-				status: 'uploading',
-				size: '222KB',
-				percent: 50,
-				preview: true,
-				fileInstance: new File([new ArrayBuffer(2048)], 'dy.jpeg', {
-					type: 'image/jpeg',
-				}),
-				url: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/root-web-sites/dy.png',
-			},
 		],
 	};
 	const plainOptions = ['A', 'B', 'C'];
 	const style = { width: '90%' };
 	const treeData = [
 		{
-			label: '亚洲',
+			label: 'Asia',
 			value: 'Asia',
 			key: '0',
 			children: [
 				{
-					label: '中国',
+					label: 'China',
 					value: 'China',
 					key: '0-0',
 					children: [
 						{
-							label: '北京',
+							label: 'Beijing',
 							value: 'Beijing',
 							key: '0-0-0',
 						},
 						{
-							label: '上海',
+							label: 'Shanghai',
 							value: 'Shanghai',
 							key: '0-0-1',
 						},
@@ -96,7 +72,7 @@ export default function FormComponents() {
 			],
 		},
 		{
-			label: '北美洲',
+			label: 'North America',
 			value: 'North America',
 			key: '1',
 		},
@@ -108,12 +84,12 @@ export default function FormComponents() {
 			style={{ padding: 10, width: '100%' }}
 			onValueChange={(v) => console.log(v)}
 		>
-			<Section text={'基本信息'}>
+			<Section text={'Basic Info'}>
 				<Row>
 					<Col span={12}>
 						<Input
 							field="name"
-							label="名称（Input）"
+							label="Name（Input）"
 							initValue={'mikeya'}
 							style={style}
 							trigger="blur"
@@ -122,10 +98,10 @@ export default function FormComponents() {
 					<Col span={12}>
 						<DatePicker
 							field="date"
-							label="日期（DatePicker）"
+							label="Date（DatePicker）"
 							style={style}
 							initValue={new Date()}
-							placeholder="请选择生效日期"
+							placeholder="Choose data"
 						/>
 					</Col>
 				</Row>
@@ -134,13 +110,13 @@ export default function FormComponents() {
 						<Select
 							field="role"
 							style={style}
-							label="角色（Select）"
-							placeholder="请选择你的角色"
+							label="Role（Select）"
+							placeholder="Choose role"
 						>
-							<Select.Option value="operate">运营</Select.Option>
-							<Select.Option value="rd">开发</Select.Option>
-							<Select.Option value="pm">产品</Select.Option>
-							<Select.Option value="ued">设计</Select.Option>
+							<Select.Option value="qa">Quality Assurance</Select.Option>
+							<Select.Option value="rd">Software Engineer</Select.Option>
+							<Select.Option value="pm">Product Manager</Select.Option>
+							<Select.Option value="ued">Designer</Select.Option>
 						</Select>
 					</Col>
 					<Col span={12}>
@@ -148,34 +124,22 @@ export default function FormComponents() {
 							field="business"
 							multiple
 							style={style}
-							placeholder="请选择业务线"
-							label="业务线（多选Select）"
-							extraText={
-								<div
-									style={{
-										color: 'rgba(var(--semi-blue-5), 1)',
-										fontSize: 14,
-										userSelect: 'none',
-										cursor: 'pointer',
-									}}
-								>
-									没有找到合适的业务线？
-								</div>
-							}
+							placeholder="Choose application"
+							label="Application（Multiple Select）"
 						>
-							<Select.Option value="abc">Semi</Select.Option>
-							<Select.Option value="ulikeCam">轻颜相机</Select.Option>
-							<Select.Option value="toutiao">今日头条</Select.Option>
+							<Select.Option value="semi">Semi</Select.Option>
+							<Select.Option value="ulikeCam">UlikeCam</Select.Option>
+							<Select.Option value="xigua">BuzzVideo</Select.Option>
 						</Select>
 					</Col>
 				</Row>
 				<Row>
 					<Col span={12}>
 						<Form.Cascader
-							placeholder="请选择所在地区"
+							placeholder="Choose Area"
 							treeData={treeData}
 							field="area"
-							label="地区（Cascader）"
+							label="Area（Cascader）"
 							style={style}
 						></Form.Cascader>
 					</Col>
@@ -183,8 +147,8 @@ export default function FormComponents() {
 						<Form.TreeSelect
 							field="tree"
 							style={style}
-							label="节点（TreeSelect）"
-							placeholder="请选择服务节点"
+							label="Node（TreeSelect）"
+							placeholder="Select Service Node"
 							treeData={treeData}
 							filterTreeNode
 						/>
@@ -194,9 +158,9 @@ export default function FormComponents() {
 					<Col span={12}>
 						<TagInput
 							field="product"
-							label="产品（TagInput）"
+							label="Product（TagInput）"
 							initValue={['abc', 'ulikeCam']}
-							placeholder="请输入产品"
+							placeholder="Type and choose product name"
 							style={style}
 						/>
 					</Col>
@@ -205,31 +169,29 @@ export default function FormComponents() {
 					<Col span={24}>
 						<Form.Upload
 							field="files"
-							label="证明文件（Upload）"
+							label="Files（Upload）"
 							action="//semi.design/api/upload"
 						>
 							<Button icon={<Icons.Upload />} theme="light">
-								点击上传
+								Click to upload
 							</Button>
 						</Form.Upload>
 					</Col>
 				</Row>
 			</Section>
-			<Section text="资源详情">
+			<Section text="Source Detail">
 				<Row>
 					<Col span={12}>
 						<TextArea
-							style={{ ...style, height: 120 }}
+							style={style}
 							field="description"
-							label="申请理由（TextArea）"
-							placeholder="请填写申请资源理由"
+							label="Apply Reason（TextArea）"
 						/>
 					</Col>
 					<Col span={12}>
 						<CheckboxGroup
 							field="type"
-							direction="horizontal"
-							label="申请类型（CheckboxGroup）"
+							label="Apply type（CheckboxGroup）"
 							initValue={['user', 'admin']}
 							rules={[{ required: true }]}
 						>
@@ -238,31 +200,39 @@ export default function FormComponents() {
 							<Checkbox value="guest">guest</Checkbox>
 							<Checkbox value="root">root</Checkbox>
 						</CheckboxGroup>
+					</Col>
+				</Row>
+				<Row>
+					<Col span={12}>
 						<RadioGroup
 							field="isMonopolize"
-							label="是否独占资源（Radio）"
-							rules={[
-								{ type: 'boolean' },
-								{ required: true, message: '必须选择是否独占 ' },
-							]}
+							label="Whether exclusive resources（Radio）"
 						>
-							<Radio value={1}>是</Radio>
-							<Radio value={0}>否</Radio>
+							<Radio value={1}>Yes</Radio>
+							<Radio value={0}>No</Radio>
 						</RadioGroup>
+					</Col>
+					<Col span={12}>
+						<CheckboxGroup
+							options={plainOptions}
+							field="checkbox"
+							label="Type（CheckboxGroup）"
+							direction="horizontal"
+						/>
 					</Col>
 				</Row>
 				<Row>
 					<Col span={12}>
 						<TimePicker
 							field="time"
-							label="截止时刻（TimePicker）"
+							label="End Time（TimePicker）"
 							style={{ width: '90%' }}
 						/>
 					</Col>
 					<Col span={12}>
 						<InputNumber
 							field="number"
-							label="申请数量（InputNumber）"
+							label="Number of applications（InputNumber）"
 							initValue={20}
 							style={style}
 						/>
@@ -272,20 +242,20 @@ export default function FormComponents() {
 					<Col span={12}>
 						<Slider
 							field="range"
-							label="资源使用报警阈值(%)（Slider）"
+							label="Resource usage alarm threshold(%)（Slider）"
 							initValue={10}
 							style={{ width: '90%' }}
 						/>
 					</Col>
 					<Col span={12}>
-						<Switch field="switch" label="开关(Switch)" />
+						<Switch field="switch" label="Switch(Switch)" />
 					</Col>
 				</Row>
 				<Row>
 					<Col span={12}>
 						<Rating
 							field="rating"
-							label="满意度(Rating)"
+							label="Satisfaction(Rating)"
 							initValue={2}
 							style={{ width: '90%' }}
 						/>
@@ -293,12 +263,12 @@ export default function FormComponents() {
 				</Row>
 			</Section>
 			<Checkbox value="false" field="agree" noLabel={true}>
-				我已阅读并清楚相关规定（Checkbox）
+				I have read and understood the relevant regulations（Checkbox）
 			</Checkbox>
 			<Button type="primary" htmlType="submit" className="btn-margin-right">
-				提交(submit)
+				Submit
 			</Button>
-			<Button htmlType="reset">重置(reset)</Button>
+			<Button htmlType="reset">Reset</Button>
 		</Form>
 	);
 }

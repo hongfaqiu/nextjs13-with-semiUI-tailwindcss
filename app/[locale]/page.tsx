@@ -2,7 +2,7 @@ import FormComponents from '@/components/FormComponents';
 
 export default function Page() {
 	return (
-		<div className='container'>
+		<div className="container">
 			<div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden">
 				<div className="flex w-[108rem] flex-none justify-end">
 					<img

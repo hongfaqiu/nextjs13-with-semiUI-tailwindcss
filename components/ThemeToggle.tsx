@@ -45,7 +45,7 @@ export default function ThemeToggle() {
 	return (
 		<Dropdown
 			position="bottom"
-			trigger="click"
+			trigger="hover"
 			showTick
 			render={
 				<Dropdown.Menu>

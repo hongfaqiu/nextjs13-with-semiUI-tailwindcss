@@ -13,7 +13,7 @@ export default function LocaleSwitcher() {
 
 	return (
 		<Dropdown
-			trigger="click"
+			trigger="hover"
 			render={
 				<Dropdown.Menu>
 					{Object.entries(languages).map(([lang, setting]) => (

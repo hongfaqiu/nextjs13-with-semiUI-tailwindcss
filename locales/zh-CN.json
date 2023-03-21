@@ -1,0 +1,19 @@
+{
+  "site": {
+    "title": "nextjs13-with-semiui-tailwindcss",
+		"desc": "将nextjs13 app directory 和 Semi-UI、tailwindcss结合使用"
+  },
+	"nav": {
+		"home": "首页",
+		"about": "关于我们",
+		"help": "帮助中心"
+	},
+	"header": {
+		"gohome": "回到首页"
+	},
+	"theme": {
+		"light": "亮色",
+		"dark": "暗色",
+		"system": "系统"
+	}
+}

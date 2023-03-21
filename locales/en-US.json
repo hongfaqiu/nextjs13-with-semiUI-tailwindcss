@@ -1,0 +1,19 @@
+{
+  "site": {
+    "title": "nextjs13-with-semiui-tailwindcss",
+		"desc": "Use the nextjs13 app directory in combination with Semi-UI tailwindcss"
+  },
+	"nav": {
+		"home": "Home",
+		"about": "About Us",
+		"help": "Help center"
+	},
+	"header": {
+		"gohome": "go home"
+	},
+	"theme": {
+		"light": "light",
+		"dark": "dark",
+		"system": "system"
+	}
+}

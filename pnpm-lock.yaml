@@ -14,7 +14,7 @@ specifiers:
   eslint-plugin-tailwindcss: ^3.10.1
   lucide-react: ^0.118.0
   next: 13.2.4
-  next-intl: 2.11.0-beta.16
+  next-intl: 2.12.0-beta.5
   next-themes: ^0.2.1
   postcss: ^8.4.21
   prettier: ^2.8.5
@@ -31,7 +31,7 @@ dependencies:
   clsx: 1.2.1
   lucide-react: 0.118.0_react@18.2.0
   next: 13.2.4_dpxg4zawgzznnxdt7it3f5d76m
-  next-intl: 2.11.0-beta.16_next@13.2.4+react@18.2.0
+  next-intl: 2.12.0-beta.5_next@13.2.4+react@18.2.0
   next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -2189,8 +2189,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /next-intl/2.11.0-beta.16_next@13.2.4+react@18.2.0:
-    resolution: {integrity: sha512-aDk08eC7iUNeVEvzrOhkYqPDvwtG00jlf4cgI+S5QukqUlEPbEcu0RjC/X06Z3kPqdCJQYbmDrX/6VW4D3oJKQ==}
+  /next-intl/2.12.0-beta.5_next@13.2.4+react@18.2.0:
+    resolution: {integrity: sha512-L5C0hSMiofxUTypG8tIt3l4CZXJYMAfGKdVDmPex7XqgrB7HLnclSukzWJcZKdT4xDFf/DGlU8xVk2GPzJ5SGg==}
     engines: {node: '>=10'}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
@@ -2201,7 +2201,7 @@ packages:
       next: 13.2.4_dpxg4zawgzznnxdt7it3f5d76m
       react: 18.2.0
       server-only: 0.0.1
-      use-intl: 2.11.0-alpha.2_react@18.2.0
+      use-intl: 2.12.0-alpha.1_react@18.2.0
     dev: false
 
   /next-themes/0.2.1_ld2jel3hspngo3u5lti2kgl2sq:
@@ -3047,8 +3047,8 @@ packages:
       punycode: 2.3.0
     dev: true
 
-  /use-intl/2.11.0-alpha.2_react@18.2.0:
-    resolution: {integrity: sha512-8fIbXplg+1CG1g/cAo/TiayH7lGxDE2DFpLixkX9AUtOOXEIsQ5OzwaQynJgz12qul7D54f9/ywiwfrKl6E8wA==}
+  /use-intl/2.12.0-alpha.1_react@18.2.0:
+    resolution: {integrity: sha512-loPULCGEhgl7EuNL/br1d1DeDJXeiXiE+S3PmZUaZgLBiYB0XzfVaheXFt/y+dpVBEslhhXzxJuo3AcgZy+bzg==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0

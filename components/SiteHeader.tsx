@@ -13,7 +13,7 @@ import ThemeToggle from './ThemeToggle';
 export default function SiteHeader() {
 	const t = useTranslations('header');
 
-	const scroll = typeof window === 'object' ? useScroll(document) : undefined;
+  const scroll = useScroll((typeof window === 'object' ? document : undefined) as any);
 
 	const classNames1 =
 		'bg-white/60 sticky top-0 z-[1031] w-full flex-none backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent lg:border-b lg:border-slate-900/10';

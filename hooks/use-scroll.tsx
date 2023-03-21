@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 type Position = { left: number; top: number };
 
-export default function useScroll(dom: Element | Document = document) {
+export default function useScroll(dom: Element | Document) {
 	const [scroll, setScroll] = useState<Position>();
 
 	useEffect(() => {

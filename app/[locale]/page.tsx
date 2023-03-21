@@ -1,21 +1,28 @@
 import FormComponents from '@/components/FormComponents';
+import Image from 'next/image';
+import lightBg from '@/public/light-bg.avif';
+import darkBg from '@/public/dark-bg.avif';
 
 export default function Page() {
 	return (
 		<div className="container">
 			<div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden">
 				<div className="flex w-[108rem] flex-none justify-end">
-					<img
-						src="https://tailwindcss.com/_next/static/media/docs@30.8b9a76a2.avif"
+					<Image
+						src={lightBg}
 						alt=""
-						className="w-[71.75rem] max-w-none flex-none dark:hidden"
+						className="max-w-none flex-none dark:hidden"
 						decoding="async"
+            width={1148}
+            height={334}
 					/>
-					<img
-						src="	https://tailwindcss.com/_next/static/media/docs-dark@30.1a9f8cbf.avif"
+					<Image
+						src={darkBg}
 						alt=""
-						className="hidden w-[90rem] max-w-none flex-none dark:block"
+						className="hidden max-w-none flex-none dark:block"
 						decoding="async"
+            width={1440}
+            height={616}
 					/>
 				</div>
 			</div>

@@ -3,35 +3,35 @@ import React, { createContext, useContext } from 'react';
 const EMPTY = Symbol();
 
 export interface ContainerProviderProps<State = void> {
-	initialState?: State;
-	children: React.ReactNode;
+  initialState?: State;
+  children: React.ReactNode;
 }
 
 interface GlobalHook<Value, State> {
-	Provider: React.ComponentType<ContainerProviderProps<State>>;
-	useHook: () => Value;
+  Provider: React.ComponentType<ContainerProviderProps<State>>;
+  useHook: () => Value;
 }
 
 function createGlobalHook<Value, State = void>(
-	hook: (...args: any) => Value,
+  hook: (...args: any) => Value,
 ): GlobalHook<Value, State> {
-	const Context = createContext<Value | typeof EMPTY>(EMPTY);
+  const Context = createContext<Value | typeof EMPTY>(EMPTY);
 
-	function Provider(props: any) {
-		const value = hook(props.initialState);
+  function Provider(props: any) {
+    const value = hook(props.initialState);
 
-		return <Context.Provider value={value}>{props.children}</Context.Provider>;
-	}
+    return <Context.Provider value={value}>{props.children}</Context.Provider>;
+  }
 
-	function useHook() {
-		const value = useContext(Context);
-		if (value === EMPTY) {
-			throw new Error('You forget to wrap component with<Context.Provider>');
-		}
-		return value;
-	}
+  function useHook() {
+    const value = useContext(Context);
+    if (value === EMPTY) {
+      throw new Error('You forget to wrap component with<Context.Provider>');
+    }
+    return value;
+  }
 
-	return { Provider, useHook };
+  return { Provider, useHook };
 }
 
 export default createGlobalHook;

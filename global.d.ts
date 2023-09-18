@@ -2,4 +2,4 @@
 type Messages = typeof import('./locales/en-US.json');
 declare interface IntlMessages extends Messages {}
 
-declare module "*.avif";
+declare module '*.avif';

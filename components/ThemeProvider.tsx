@@ -8,48 +8,48 @@ import { ThemeProviderProps } from 'next-themes/dist/types';
 import '@douyinfe/semi-ui/dist/css/semi.min.css';
 
 function syncSystemTheme() {
-	const mql = window.matchMedia('(prefers-color-scheme: dark)');
-	function matchMode(e: MediaQueryList) {
-		if (e.matches) {
-			document.body.setAttribute('theme-mode', 'dark');
-		} else {
-			document.body.setAttribute('theme-mode', 'light');
-		}
-	}
-	matchMode(mql);
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  function matchMode(e: MediaQueryList) {
+    if (e.matches) {
+      document.body.setAttribute('theme-mode', 'dark');
+    } else {
+      document.body.setAttribute('theme-mode', 'light');
+    }
+  }
+  matchMode(mql);
 }
 
 function SemiThemeWrapper({ children }: PropsWithChildren) {
-	const { theme } = useTheme();
+  const { theme } = useTheme();
 
-	useEffect(() => {
-		const body = document.body;
+  useEffect(() => {
+    const body = document.body;
 
-		switch (theme) {
-			case 'light':
-				body.setAttribute('theme-mode', 'light');
-				return;
+    switch (theme) {
+      case 'light':
+        body.setAttribute('theme-mode', 'light');
+        return;
 
-			case 'dark':
-				body.setAttribute('theme-mode', 'dark');
-				return;
+      case 'dark':
+        body.setAttribute('theme-mode', 'dark');
+        return;
 
-			case 'system':
-			default:
-				syncSystemTheme();
-				return;
-		}
-	}, [theme]);
+      case 'system':
+      default:
+        syncSystemTheme();
+        return;
+    }
+  }, [theme]);
 
-	return <>{children}</>;
+  return <>{children}</>;
 }
 
 export default function ThemeProvider({
-	children,
+  children,
 }: PropsWithChildren<ThemeProviderProps>) {
-	return (
-		<NextThemeProvider attribute="class" defaultTheme="system" enableSystem>
-			<SemiThemeWrapper>{children}</SemiThemeWrapper>
-		</NextThemeProvider>
-	);
+  return (
+    <NextThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <SemiThemeWrapper>{children}</SemiThemeWrapper>
+    </NextThemeProvider>
+  );
 }

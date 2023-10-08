@@ -16,6 +16,7 @@ export default function Page() {
             decoding="async"
             width={1148}
             height={334}
+            priority
           />
           <Image
             src={darkBg}
@@ -24,6 +25,7 @@ export default function Page() {
             decoding="async"
             width={1440}
             height={616}
+            priority
           />
         </div>
       </div>

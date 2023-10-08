@@ -35,7 +35,7 @@ export default function ThemeToggle() {
       key: 'system',
       label: (
         <div className="flex items-center">
-          <Icons.Laptop className="stroke-1.5 mr-2 h-5 w-5" />
+          <Icons.Laptop className="mr-2 h-5 w-5 stroke-1.5" />
           <span>{t('system')}</span>
         </div>
       ),
@@ -62,8 +62,8 @@ export default function ThemeToggle() {
       }
     >
       <div className="btn">
-        <Icons.SunMedium className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-orange-500" />
-        <Icons.Moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-blue-500" />
+        <Icons.SunMedium className="rotate-0 scale-100 text-orange-500 transition-all dark:-rotate-90 dark:scale-0" />
+        <Icons.Moon className="absolute rotate-90 scale-0 text-blue-500 transition-all dark:rotate-0 dark:scale-100" />
       </div>
     </Dropdown>
   );
